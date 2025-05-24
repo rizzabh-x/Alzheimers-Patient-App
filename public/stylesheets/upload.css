@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-top: 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+    background: #007BFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
+  .album {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px auto;
+  }
+  
+  .photo-card {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 200px;
+  }
+  
+  .photo-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  

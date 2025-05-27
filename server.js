@@ -13,11 +13,11 @@ const session = require('express-session');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const path = require('path');
-const twilio = require('twilio');
+// const twilio = require('twilio');
 const fs = require('fs');
 
 // Initialize Twilio client with environment variables
-const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+// const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
 
 // MongoDB Atlas connection
@@ -531,40 +531,40 @@ app.post('/forum', checkAuthenticated, async (req, res) => {
 });
 
 
-app.post('/sendSOS', checkAuthenticated, async (req, res) => {
-  try {
-    // Get the authenticated user's information
-    const user = await req.user;
+// app.post('/sendSOS', checkAuthenticated, async (req, res) => {
+//   try {
+//     // Get the authenticated user's information
+//     const user = await req.user;
 
-    // Extract the emergency contact phone number from the user's information
-    const emergencyContactPhone = user.emergencyContact.phone;
+//     // Extract the emergency contact phone number from the user's information
+//     const emergencyContactPhone = user.emergencyContact.phone;
 
-    // Extract user's name and contact number
-    const patientName = user.username;
-    const patientContact = user.phone;
+//     // Extract user's name and contact number
+//     const patientName = user.username;
+//     const patientContact = user.phone;
 
-    // Send SMS using Twilio
-    await client.messages.create({
-      body: `THIS IS AN SOS MESSAGE BY YARN, from ${patientName}. Please contact immediately at ${patientContact}.`,
-      from: '+15169812980', // Your Twilio phone number
-      to: emergencyContactPhone
-    });
+//     // Send SMS using Twilio
+//     await client.messages.create({
+//       body: `THIS IS AN SOS MESSAGE BY YARN, from ${patientName}. Please contact immediately at ${patientContact}.`,
+//       from: '+15169812980', // Your Twilio phone number
+//       to: emergencyContactPhone
+//     });
 
-    console.log('SOS sent successfully.');
-    // Set success flash message
-    req.flash('success', 'SOS request sent successfully.');
-    // Redirect to the home page or any other relevant page
+//     console.log('SOS sent successfully.');
+//     // Set success flash message
+//     req.flash('success', 'SOS request sent successfully.');
+//     // Redirect to the home page or any other relevant page
 
-    res.redirect('/');
-  } catch (error) {
-    console.error('Error sending SOS:', error);
-    // Set error flash message
-    req.flash('error', 'Failed to send SOS.');
+//     res.redirect('/');
+//   } catch (error) {
+//     console.error('Error sending SOS:', error);
+//     // Set error flash message
+//     req.flash('error', 'Failed to send SOS.');
 
-    // Redirect to the home page or any other relevant page
-    res.redirect('/');
-  }
-});
+//     // Redirect to the home page or any other relevant page
+//     res.redirect('/');
+//   }
+// });
 
 
 

@@ -1006,6 +1006,6 @@ app.post('/add-member', upload.single('photo'), (req, res) => {
 
 
 
-app.listen(5000, () => {
+app.listen(3000, () => {
   console.log('Server is running on port 5000');
 });

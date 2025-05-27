@@ -6,7 +6,6 @@
   "scripts": {
     "build": "node server.js",
     "prebuild": "npm run lint",
-    "lint": "eslint src",
     "devStart": "nodemon server.js"
   },
   "author": "",

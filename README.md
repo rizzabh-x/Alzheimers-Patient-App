@@ -5,7 +5,7 @@ To get started with YARN, follow these steps:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/Nachi28/YARN.git
+git clone https://github.com/rizzabh-x/Alzheimers-Patient-App.git
 ```
 2. Ensure you have the latest version of Node.js installed.
 
